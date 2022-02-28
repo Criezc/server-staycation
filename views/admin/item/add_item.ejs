@@ -1,0 +1,75 @@
+<div
+  class="tab-pane fade"
+  id="additem"
+  role="tabpanel"
+  aria-labelledby="additem-tab"
+>
+  <form action="/admin/item" method="POST" enctype="multipart/form-data">
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Enter title"
+          name="title"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          placeholder="Enter Price"
+          name="price"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          placeholder="Enter city"
+          name="city"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="city">Category</label>
+        <select name="categoryId" class="form-control">
+          <option value="">--- Category ---</option>
+          <% for (let i = 0; i < category.length; i++){%>
+          <option value="<%= category[i].id %>"><%= category[i].name %></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="image">Image Upload</label>
+        <input
+          type="file"
+          class="form-control"
+          id="image"
+          name="image"
+          required
+          multiple
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="about" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        Close
+      </button>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+</div>
