@@ -10,7 +10,7 @@ var usersRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 //import Mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_bwamern", {
+mongoose.connect("mongodb://localhost:27017/db_staycation", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
