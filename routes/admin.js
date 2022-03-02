@@ -3,10 +3,12 @@ const router = require("express").Router();
 const adminController = require("../controllers/adminController");
 
 const { uploadSingle, uploadMultiple } = require("../middlewares/multer");
+const auth = require("../middlewares/auth");
 
 router.get("/signin", adminController.viewSignIn);
-
 router.post("/signin", adminController.actionSignIn);
+router.use(auth);
+router.get("/logout", adminController.actionLogOut);
 
 router.get("/dashboard", adminController.viewDashboard);
 
@@ -45,5 +47,8 @@ router.delete("/item/:itemId/activity/:id", adminController.deleteActivity);
 
 // endpoint booking
 router.get("/booking", adminController.viewBooking);
+router.get("/booking/:id", adminController.showDetailBooking);
+router.put("/booking/:id/confirmation", adminController.actionConfirmation);
+router.put("/booking/:id/rejection", adminController.actionRejection);
 
 module.exports = router;
