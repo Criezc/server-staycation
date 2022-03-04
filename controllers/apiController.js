@@ -61,7 +61,7 @@ module.exports = {
           treasures: treasure.length,
           cities: city.length,
         },
-        categories: { category },
+        category,
         mostPicked,
         testimonial,
       });
@@ -75,7 +75,7 @@ module.exports = {
       const { id } = req.params;
       const item = await Item.findOne({ _id: id })
         .select(
-          "_id title type imageId country city price price unit isPopular hasBackyard description"
+          "_id title type imageId country city price price unit isPopular description sumBooking"
         )
         .populate({
           path: "imageId",
