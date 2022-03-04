@@ -23,6 +23,14 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  unit: {
+    type: String,
+    default: "Night",
+  },
+  sumBooking: {
+    type: Number,
+    default: 0,
+  },
   isPopular: {
     type: Boolean,
   },
