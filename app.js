@@ -10,10 +10,13 @@ var usersRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 //import Mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_staycation", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://staycation-dev:E0YHglOyLwWJAI5S@cluster0.r14dv.mongodb.net/db_staycation?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 // express sessions
 const session = require("express-session");
 
